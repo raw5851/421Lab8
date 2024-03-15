@@ -16,12 +16,28 @@ public class TV
     {
 
     }
-    public  
+    public String getInfo()
+    {
+        return "";
+    }
+    public int getPrice()
+    {
+        return this.price;
+    }
+    public String getType()
+    {
+        return "";
+    }
 }
 
 public class Smart_TV:TV
 {
     private int price = 300;
+
+    public double getPowerUsage()
+    {
+        return 5.5;
+    }
 }
 
 public class UltraHD_TV : TV
@@ -33,12 +49,15 @@ public class UltraHD_TV : TV
 #region TV Interfaces
 public interface TVIF
 {
-
+    public String getInfo();
+    public int getPrice();
+    public String getType();
+    public String getBrand();
 }
 
 public interface Smart_TVIF : TVIF
 {
-
+    public double getPowerUsage();
 }
 
 public interface UltraHD_TVIF : TVIF
@@ -48,9 +67,25 @@ public interface UltraHD_TVIF : TVIF
 #endregion
 
 #region Vizio TV Classes
-public class Vizio_TV: TVIF
+public class Vizio_TV : TVIF
 {
-
+    public int price;
+    public String getInfo()
+    {
+        return "";
+    }
+    public int getPrice()
+    {
+        return this.price;
+    }
+    public String getType()
+    {
+        return "";
+    }
+    public String getBrand()
+    {
+        return "Vizio";
+    }
 }
 
 public class Vizio_Smart_TV : Vizio_TV, Smart_TVIF
